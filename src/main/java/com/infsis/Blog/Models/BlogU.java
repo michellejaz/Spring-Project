@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
+import com.infsis.Blog.Models.User;
 
 @Entity
 public class BlogU {
@@ -16,10 +17,12 @@ public class BlogU {
     private String nameBlog;
     private LocalDateTime createdAtBlog;
 
+
     public BlogU(Integer idBlog, String nameBlog, LocalDateTime createdAtBlog) {
         IdBlog = idBlog;
         this.nameBlog = nameBlog;
         this.createdAtBlog = createdAtBlog;
+
     }
     public BlogU(){
 
@@ -47,4 +50,5 @@ public class BlogU {
     public void setCreatedAtBlog(LocalDateTime createdAtBlog) {
         this.createdAtBlog = createdAtBlog;
     }
+
 }

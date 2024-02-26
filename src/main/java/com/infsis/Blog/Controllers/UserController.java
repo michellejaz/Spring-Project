@@ -20,6 +20,7 @@ public class UserController {
     }
     @PostMapping
     public ResponseEntity<UserDTO> saveUser(@RequestBody UserDTO userDTO){
+
         return ResponseEntity.ok().body(userDTO);
     }
 
