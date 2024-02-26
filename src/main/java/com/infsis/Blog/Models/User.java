@@ -1,27 +1,41 @@
 package com.infsis.Blog.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class User {
     @Id
+    //@Table(name= "\"user\""); creo que es eso :0
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    //@Colum(name="nombre") hara referencia a un atributo de la tabla de la BD
+    //@Column(columnDefinition="Bolean not null default true")
     private String name;
     private String email;
+    @CreatedDate
     private LocalDateTime createdAt;
-
+    //@OneToMany(fetch0 FetchType.LAZY)
+    //private List<Article> articulos;
+    //@ManyToMany
+    //@JoinTable(
+    // name= "user-role"
+    // joinColumns= @JoinColum(name= "user-id")
+    // inter
+    // )
+    //private List<roles> roles;
     public User(Integer id, String name, String email, LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.createdAt = createdAt;
     }
+
     public User(){
 
     }

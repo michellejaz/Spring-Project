@@ -1,12 +1,12 @@
 package com.infsis.Blog.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 import com.infsis.Blog.Models.User;
+import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 public class BlogU {
@@ -15,8 +15,14 @@ public class BlogU {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer IdBlog;
     private String nameBlog;
+    @CreatedDate
     private LocalDateTime createdAtBlog;
+    @OneToMany(fetch =  FetchType.LAZY, mappedBy = "blog")
+    private List<Article> articles;
+    @OneToOne
+    @JoinColumn(name = "user_id")
 
+    private User user;
 
     public BlogU(Integer idBlog, String nameBlog, LocalDateTime createdAtBlog) {
         IdBlog = idBlog;
