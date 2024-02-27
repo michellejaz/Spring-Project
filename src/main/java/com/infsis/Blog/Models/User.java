@@ -33,6 +33,7 @@ public class User {
 
     @OneToOne(fetch = FetchType.LAZY,mappedBy = "user")
     private BlogU blog;
+
     public User(Integer id, String name, String email, LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
