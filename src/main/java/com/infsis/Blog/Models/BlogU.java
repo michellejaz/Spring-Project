@@ -4,11 +4,11 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
-import com.infsis.Blog.Models.User;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class BlogU {
     //se uso el nombre de BlogU para que no haya una confusion con el nombre del proyecto
     @Id
