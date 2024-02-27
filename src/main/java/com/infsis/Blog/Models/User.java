@@ -14,8 +14,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    //@Colum(name="nombre") hara referencia a un atributo de la tabla de la BD
-    //@Column(columnDefinition="Bolean not null default true")
+    //apunte @Colum(name="nombre") hara referencia a un atributo de la tabla de la BD
+    //apunte @Column(columnDefinition="Bolean not null default true")
     private String name;
     private String email;
     @CreatedDate
