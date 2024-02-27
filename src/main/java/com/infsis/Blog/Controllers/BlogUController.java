@@ -24,7 +24,7 @@ public class BlogUController {
         return ResponseEntity.ok().body(blogUDTO);
     }
     @PutMapping("/{idBlog}")
-    public ResponseEntity<BlogUDTO> updateUser(@PathVariable Integer idBlog, @RequestBody BlogUDTO blogUDTO){
+    public ResponseEntity<BlogUDTO> updateBlogU(@PathVariable Integer idBlog, @RequestBody BlogUDTO blogUDTO){
         return ResponseEntity.ok().body(blogUDTO);
     }
     @DeleteMapping("/{idBlog}")

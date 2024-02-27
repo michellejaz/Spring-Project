@@ -9,16 +9,17 @@ public class role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer IdRole;
-    private String name;
+    private String nameRole;
     @Id
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
     public role(){
 
     }
-    public role(Integer idRole, String name) {
+
+    public role(Integer idRole, String nameRole) {
         IdRole = idRole;
-        this.name = name;
+        this.nameRole = nameRole;
     }
 
     public Integer getIdRole() {
@@ -29,11 +30,11 @@ public class role {
         IdRole = idRole;
     }
 
-    public String getName() {
-        return name;
+    public String getNameRole() {
+        return nameRole;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameRole(String nameRole) {
+        this.nameRole = nameRole;
     }
 }
